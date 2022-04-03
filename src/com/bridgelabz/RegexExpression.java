@@ -45,7 +45,7 @@ public class RegexExpression {
     }
 
     public boolean validEmail(String email) {
-        String pattern = "^(abc)[0-9+-]*(@)[0-9a-z]{1,}(.com){1,}(.au)*$|^(abc)[0-9+-]*(@)[0-9a-z]{1,}(.net){1}$";
+        String pattern = "^(abc)[.0-9+-]*(@)[0-9a-z]{1,}(.com){1,}(.au)*$|^(abc)[0-9+-]*(@)[0-9a-z]{1,}(.net){1}$";
         if(email.matches(pattern)) {
             return true;
         }
