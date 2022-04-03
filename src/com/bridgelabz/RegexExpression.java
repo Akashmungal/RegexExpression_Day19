@@ -20,6 +20,14 @@ public class RegexExpression {
         return false;
     }
 
+    public boolean email(String email) {
+        String pattern  = "^(abc)[.]{1}[A-Za-z]*[@]{1}(bl.co)(.in)*$";
+        if (email.matches(pattern)) {
+            return true;
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
 
         RegexExpression regex = new RegexExpression();
@@ -32,6 +40,10 @@ public class RegexExpression {
         System.out.println("Enter the last name :");
         String lastName = scan.nextLine();
         System.out.println(regex.firstName(lastName));
+
+        System.out.println("Enter the email address:");
+        String email = scan.nextLine();
+        System.out.println(regex.email(email));
 
     }
 }
