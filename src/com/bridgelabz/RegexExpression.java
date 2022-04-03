@@ -37,36 +37,20 @@ public class RegexExpression {
     }
 
     public boolean password(String password) {
-        String pattern  = "^[a-zA-Z0-9]{8,}$";
+        String pattern  = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
         if (password.matches(pattern)) {
             return true;
         }
         return false;
     }
 
-    public static void main(String[] args) {
-
-        RegexExpression regex = new RegexExpression();
-        Scanner scan = new Scanner(System.in);
-
-        System.out.println("Enter the first name :");
-        String firstName = scan.nextLine();
-        System.out.println(regex.firstName(firstName));
-
-        System.out.println("Enter the last name :");
-        String lastName = scan.nextLine();
-        System.out.println(regex.firstName(lastName));
-
-        System.out.println("Enter the email address:");
-        String email = scan.nextLine();
-        System.out.println(regex.email(email));
-
-        System.out.println("Enter the mobile number:");
-        String mobile = scan.nextLine();
-        System.out.println(regex.mobile(mobile));
-
-        System.out.println("Enter the password :");
-        String password = scan.nextLine();
-        System.out.println(regex.password(password));
+    public boolean validEmail(String email) {
+        String pattern = "^(abc)[0-9+-]*(@)[0-9a-z]{1,}(.com){1,}(.au)*$|^(abc)[0-9+-]*(@)[0-9a-z]{1,}(.net){1}$";
+        if(email.matches(pattern)) {
+            return true;
+        }
+        return false;
     }
+
+
 }
