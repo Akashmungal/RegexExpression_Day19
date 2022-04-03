@@ -36,6 +36,14 @@ public class RegexExpression {
         return false;
     }
 
+    public boolean password(String password) {
+        String pattern  = "^[a-zA-Z0-9]{8,}$";
+        if (password.matches(pattern)) {
+            return true;
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
 
         RegexExpression regex = new RegexExpression();
@@ -56,5 +64,9 @@ public class RegexExpression {
         System.out.println("Enter the mobile number:");
         String mobile = scan.nextLine();
         System.out.println(regex.mobile(mobile));
+
+        System.out.println("Enter the password :");
+        String password = scan.nextLine();
+        System.out.println(regex.password(password));
     }
 }
